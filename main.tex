@@ -1,0 +1,43 @@
+\documentclass[a4paper]{report}
+\input{packages.tex}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+\usepackage{cleveref}
+\usepackage[left=2cm, right=2cm, top=3cm]{geometry}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{DATO!}
+\lhead{CDIO project 3 - Junior Monopoly}
+\rfoot{side \thepage}
+\renewcommand{\contentsname}{Indholdsfortegnelse}
+\renewcommand{\bibname}{}
+\setcounter{secnumdepth}{0} % sections are level 
+\setcounter{tocdepth}{4}
+\renewcommand{\baselinestretch}{1.15}
+
+
+\begin{document}
+
+\input{000_Forside}
+\input{00_Timeregnskab}
+\input{01_Abstract}
+
+
+\tableofcontents
+\input{02_Indledning}
+\input{03_Krav}
+\input{04_Analyse}
+\input{05_Design}
+\input{06_Implementering}
+\input{07_Test}
+\input{08_Projektplanlægning}
+\input{09_Konklusion}
+\input{91_Forklaringer}
+\input{99_LitteraturListe}
+
+\end{document}

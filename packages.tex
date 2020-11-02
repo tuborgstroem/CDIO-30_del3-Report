@@ -1,0 +1,177 @@
+%%%%% PACKAGES %%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}						% Giver mulighed for "side x af y"
+\usepackage{url}							% Giver mulighed for links i fodnote
+\usepackage{array}
+\usepackage{calc}
+\usepackage{mwe}	
+\usepackage[nomessages]{fp}
+\usepackage{booktabs} 						% Punktopstilling til mufs bachelor
+\usepackage{appendix}
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{stackengine}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{smartdiagram}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage{etoolbox}
+\usepackage{amsmath}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+% --- Patch \chapter
+\patchcmd{\@makechapterhead}{1\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER X
+\patchcmd{\@makechapterhead}{20\p@}{\chapheadsep}{}{}% Space between CHAPTER X and CHAPTER TITLE
+\patchcmd{\@makechapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
+% --- Patch \chapter*
+\patchcmd{\@makeschapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER TITLE
+\patchcmd{\@makeschapterhead}{40\p@}{\chapheadbelowskip}{}{}% SPace between CHAPTER TITLE and text
+\makeatother
+% Set new lengths
+\newlength{\chapheadtopskip}\setlength{\chapheadtopskip}{20pt}
+\newlength{\chapheadsep}\setlength{\chapheadsep}{40pt}
+\newlength{\chapheadbelowskip}\setlength{\chapheadbelowskip}{15pt}
+\makeatother
+\usepackage{tasks}
+\usepackage[ampersand]{easylist}
+
+
+%%%%% TIKZ %%%%%
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC,shapes,arrows,spy,positioning,snakes,plotmarks,backgrounds}
+\usepackage[american voltages, american currents,siunitx,smartlabels]{circuitikz}
+\usepackage{pgfplots}
+
+%%%%% OVERSAETTELSE OG TEGNSAETNING %%%%%
+%\usepackage[danish]{babel}					% Dokumentets sprog
+\usepackage[T1]{fontenc}					% Output-indkodning af tegnsaet (T1)
+\usepackage{ragged2e,anyfontsize}			% Justering af elementer
+				
+																					
+%%%%% FIGURES AND TABLES %%%%%
+\usepackage{pbox}							% Tvungne linjeskift i tabeller
+\usepackage{tabularx}						% Tvungne linjeskift i tabeller
+\usepackage{graphicx} 						% Haandtering af eksterne \nomenclature[W]{$T_{Melt}$}{Melt temperature [\si{\celsius}]}befbilleder (JPG, PNG, EPS, PDF)
+\usepackage{eso-pic}						% Tilfoej billedekommandoer paa hver side
+\usepackage{multirow}                		% Fletning af raekker og kolonner (\multicolumn og \multirow)
+\usepackage{multicol}         	        	% Muliggoer output i spalter
+\usepackage{rotating}						% Rotation af tekst med \begin{sideways}...\end{sideways}
+\usepackage{colortbl} 						% Farver i tabeller (fx \columncolor og \rowcolor)
+\usepackage{xcolor}							% Definer farver med \definecolor
+\usepackage{flafter}						% Soerger for at floats ikke optraeder i teksten foer deres reference
+\let\newfloat\relax 						% Justering mellem float-pakken og memoir
+\usepackage{float}							% Muliggoer eksakt placering af floats, f.eks. \begin{figure}[H]
+\graphicspath{{./figures/}}					% Saetter default grafik-sti
+\usepackage{placeins}						% \FloatBarrier
+\usepackage{wrapfig}
+\usepackage{varwidth} 
+
+%%%%% MATEMATIK MED MERE %%%%%
+\usepackage{amsmath,amssymb,stmaryrd} 		% Avancerede matematik-udvidelser
+\usepackage{mathtools}						% Andre matematik- og tegnudvidelser
+\usepackage{textcomp}                 		% Symbol-udvidelser
+\usepackage{rsphrase}						% Kemi-pakke til RS-saetninger,
+\usepackage[version=3]{mhchem} 				% Kemi-pakke til flot og let notation af formler
+\usepackage{siunitx}						% Flot og konsistent praesentation af tal og enheder med \si{enhed} og \SI{tal}{enhed}
+%\sisetup{locale=DE}						% Opsaetning af \SI (DE for komma som decimalseparator) 
+\sisetup{output-decimal-marker = {.}}		% Bruges ved engelske rapporter
+
+%%%%% REFERENCES AND SOURCES %%%%%
+\usepackage[danish]{varioref}				% Muliggoer bl.a. krydshenvisninger med sidetal (\vref)
+\usepackage{xr}								% Referencer til eksternt dokument med \externaldocument{<NAVN>}
+\usepackage{glossaries}						% Terminologi- eller symbolliste (se mere i Daleifs Latex-bog)
+
+%%%%% MISC. %%%%%%
+\usepackage{titlesec}
+\usepackage{epigraph}
+\usepackage{lipsum}							% Dummy text \lipsum[..]
+\usepackage[shortlabels]{enumitem}			% Muliggoer enkelt konfiguration af lister
+\usepackage{pdfpages}						% Goer det muligt at inkludere pdf-dokumenter med kommandoen \includepdf[pages={x-y}]{fil.pdf}	
+\pretolerance=2500 							% Justering af afstand mellem ord (hoejt tal, mindre orddeling og mere luft mellem ord)
+\usepackage[footnote,draft,english,silent,nomargin]{fixme}		
+
+
+\pgfplotsset{compat=1.15}
+
+
+
+
+
+% code in latex
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{chaptercolor}{rgb}{0.36, 0.54, 0.66}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{listingsutf8}
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,
+    extendedchars=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+
+
+% Nomenclature grouping and creation %
+\usepackage{etoolbox}
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{M}{Material Properties}{%
+  \ifstrequal{#1}{P}{Physics Constants}{%
+  \ifstrequal{#1}{O}{Symbols}{%
+  \ifstrequal{#1}{Q}{Machine parameters}{%
+  \ifstrequal{#1}{W}{Moulding parameters}{%
+  \ifstrequal{#1}{A}{Abbreviations}{}}}}}}%
+]}
+
+
+
+
+
